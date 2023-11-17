@@ -25,8 +25,8 @@ const searchCountry = async () => {
     countriesData = data;
 
     // Display a default country (you can change this logic)
-    const randomIndex = Math.floor(Math.random() * data.length);
-    displayCountry(data[randomIndex]);
+    const randomCountry = Math.floor(Math.random() * data.length);
+    displayCountry(data[randomCountry]);
   } catch (error) {
     console.error(error);
   }
@@ -37,7 +37,7 @@ const displayCountry = (country) => {
 
   nameCountry.textContent = name.common;
   regionCountry.textContent = region;
-  capitalCountry.textContent = capital;
+  capitalCountry.textContent = capital[0];
   flagImage.src = flags.png;
 
   const languageList = Object.values(languages).join(', '); 
@@ -53,6 +53,14 @@ const displayCountry = (country) => {
   mapCountry.href = maps.googleMaps;
 
 };
+
+
+search.addEventListener('input', (e) => {
+  const inputValue = search.value.trim();
+  searchCountryName(inputValue);
+});
+
+
 
 const searchCountryName = (inputValue) => {
   searchDiv.innerHTML = '';
@@ -86,14 +94,6 @@ const displaySearchResults = (data) => {
     searchDiv.appendChild(span);
   });
 };
-
-
-
-search.addEventListener('input', (e) => {
-  const inputValue = search.value.trim();
-  searchCountryName(inputValue);
-});
-
 
 
 
