@@ -1,4 +1,4 @@
-# search_country
+# search_country_app
 
 ## Description 
 Making an application that displays 
@@ -7,6 +7,9 @@ API that provides country information
 
 ## Project Live
 [search_country](https://zlhshn.github.io/search_country/)
+
+## How does the project look?
+![search_country](./country.gif)
 
 ## API
 https://restcountries.com/v3.1/all
